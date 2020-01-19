@@ -11,20 +11,24 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        if messageLabel.text=="You are awesome!"{
+        let awesomeMessage="You are awesome!"
+        if messageLabel.text==awesomeMessage{
             messageLabel.text="You are great!"
-        }else if messageLabel.text=="You are great!"{
-            messageLabel.text="You are Amazing!"
+            imageView.image=UIImage(named:"image1")
+        }else
+        {
+            messageLabel.text=awesomeMessage
+            imageView.image=UIImage(named:"image0")
         }
-        else{
-            messageLabel.text="You are awesome!"
-        }
+        
     }
 
 }
